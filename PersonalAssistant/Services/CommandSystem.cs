@@ -8,7 +8,7 @@ namespace PersonalAssistant
     public class CommandSystem
     {
         MethodInfo[] methods;
-        private Commands CommandClass;
+        private ExampleCommands CommandClass;
 
         public string[] AvailableCommands = Array.Empty<string>();
 
@@ -16,7 +16,7 @@ namespace PersonalAssistant
         
         public void Initialize()
         {
-            CommandClass = new Commands();
+            CommandClass = new ExampleCommands();
             
             methods = CommandClass.GetType().Assembly.GetTypes()
                 .SelectMany(t => t.GetMethods())
