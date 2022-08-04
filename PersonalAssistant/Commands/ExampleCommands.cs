@@ -5,6 +5,7 @@ using System.Speech.Synthesis;
 
 namespace PersonalAssistant
 {
+    [CommandClass]
     public class ExampleCommands
     {
         //--<- Variables ->--//
@@ -137,6 +138,15 @@ namespace PersonalAssistant
         {
             Paige.SpeakAsync("Sure, closing help list " + Username);
             utils.CloseApplication("notepad", true);
+        }
+        
+        [Command("find project")]
+        [Confidence(60)]
+        public void FindProject()
+        {
+            Paige.SpeakAsync("Opening Github " + Username);
+                    
+            utils.OpenUrl("https://github.com/MJTSgamer/PersonalAssistant");
         }
     }
 }
